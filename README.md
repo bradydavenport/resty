@@ -33,8 +33,9 @@ Set up basic scaffolding of RESTy application, with intent to add more functiona
 ### Links and Resources
 
 [GitHub Repo](https://github.com/bradydavenport/resty)
+[CodeSandbox](https://codesandbox.io/s/resty-pvwji7)
 
-![UML]()
+![UML](/public/UML.png)
 
 ### How to use
 
