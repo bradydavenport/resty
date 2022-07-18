@@ -11,7 +11,7 @@ class Form extends React.Component {
       url: 'https://pokeapi.co/api/v2/pokemon',
     };
     this.props.handleApiCall(formData);
-  }
+  };
 
   render() {
     return (
