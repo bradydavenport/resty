@@ -34,7 +34,7 @@ Set up basic scaffolding of RESTy application, with intent to add more functiona
 
 [GitHub Repo](https://github.com/bradydavenport/resty)
 
-![UML]()
+![UML](/public/UML.png)
 
 ### How to use
 
