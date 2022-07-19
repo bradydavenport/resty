@@ -24,18 +24,18 @@ const App = props => {
         { name: 'fake thing 2', url: 'http://fakethings.com/2' },
       ],
     };
-    this.setState({ data, requestParams });
+    // this.setState({ data, requestParams });
   };
 
   return (
-    <React.Fragment>
+    <>
       <Header />
-      <div>Request Method: {this.state.requestParams.method}</div>
-      <div>URL: {this.state.requestParams.url}</div>
-      <Form handleApiCall={this.callApi} />
-      <Results data={this.state.data} />
+      <div>Request Method: {props.method}</div>
+      <div>URL: {props.url}</div>
+      <Form handleApiCall={callApi} />
+      <Results />
       <Footer />
-    </React.Fragment>
+    </>
   );
 }
 
