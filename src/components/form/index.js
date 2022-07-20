@@ -1,16 +1,24 @@
-import React from 'react';
+import { React, useState } from 'react';
 
 import './form.scss';
 
 const Form = (props) => {
 
-  const handleSubmit = e => {
+  const [ method, setMethod ] = useState('GET');
+  const [ url, setUrl ] = useState(`https://pokeapi.co/api/v2/pokemon`);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      method: 'GET',
-      url: 'https://pokeapi.co/api/v2/pokemon',
+      method: {method},
+      url: {url},
     };
     props.handleApiCall(formData);
+  };
+
+  const handleMethodSelect = e => {
+    let newMethod = e.target.id;
+    setMethod(newMethod);
   };
 
   return (
@@ -22,10 +30,10 @@ const Form = (props) => {
           <button type="submit">GO!</button>
         </label>
         <label className="methods">
-          <span id="get">GET</span>
-          <span id="post">POST</span>
-          <span id="put">PUT</span>
-          <span id="delete">DELETE</span>
+          <button id="GET" onClick={handleMethodSelect}>GET</button>
+          <button id="POST"onClick={handleMethodSelect}>POST</button>
+          <button id="PUT"onClick={handleMethodSelect}>PUT</button>
+          <button id="DELETE" onClick={handleMethodSelect}>DELETE</button>
         </label>
       </form>
     </>

@@ -1,4 +1,4 @@
-# LAB - Class 26
+# LAB - Class 26, 27
 
 ## Project: RESTy
 
@@ -10,7 +10,7 @@
 
 Set up basic scaffolding of RESTy application, with intent to add more functionality to the system.
 
-##### Feature Tasks
+##### Phase 1 Feature Tasks
 
 1. Refactor starter code
 
@@ -29,6 +29,37 @@ Set up basic scaffolding of RESTy application, with intent to add more functiona
 - `Form` component
   - calls a function on submit that updates `App/>` component via a function sent down as props so that the app can process the form values.
   - `Results/>` component should show mock API results.
+
+#### Phase 2: Retrieving User Input and Managing State (19 Jul 2022)
+
+##### Phase 2 Feature Tasks
+
+1. Refactor any components using `this.setState` to implement the `useState()` React API hook
+2. Refactor the Form Component to implement user input from form elements, instead of hard coded string values.
+
+##### Suggested Component Hierarchy and Application Architecture
+
+- `index.js` - Entry Point
+- `App.js` - Container
+  - Holds application state: The Request (from the form) and the Response (from the API)
+  - A class method that can update state
+  - Renders 2 Child Components
+- `<Form />`
+  - Expects a function to be sent to it as a prop
+  - Renders a URL entry form
+  - A selection of REST methods to choose from (“get” should be the default)
+    - The active selection should be displayed/styled differently than the others
+  - Renders a Textarea to allow the user to type in a JSON object for a POST or PUT request
+  - On submit
+    - Send the Form entries back to the `<App>` using the method sent down in props
+    - Form will run the API request
+      - Toggle the “loading” status before and after the request
+- `<Results />`
+  - Conditionally renders “Loading” or the data depending on the status of the request
+  - Expects the count, headers, results to be sent in as props
+  - Renders the count
+  - Renders the Result Headers as “pretty” JSON
+  - Renders the Result Body as “pretty” JSON
 
 ### Links and Resources
 
