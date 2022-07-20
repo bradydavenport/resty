@@ -15,15 +15,12 @@ const App = props => {
   //   };
   // }
 
+  const [ data, setData ] = useState();
+
   const callApi = (requestParams) => {
     // mock output
-    const data = {
-      count: 2,
-      results: [
-        { name: 'fake thing 1', url: 'http://fakethings.com/1' },
-        { name: 'fake thing 2', url: 'http://fakethings.com/2' },
-      ],
-    };
+    const apiData = {data};
+    setData(apiData);
     // this.setState({ data, requestParams });
   };
 
@@ -33,7 +30,7 @@ const App = props => {
       <div>Request Method: {props.method}</div>
       <div>URL: {props.url}</div>
       <Form handleApiCall={callApi} />
-      <Results />
+      <Results data={data}/>
       <Footer />
     </>
   );
