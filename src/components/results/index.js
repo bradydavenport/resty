@@ -1,10 +1,11 @@
-import React from 'react';
+import JSONPretty from "react-json-pretty";
 
 const Results = (props) => {
 
   return (
     <section>
-      <pre>{props.data ? JSON.stringify(props.data, undefined, 2) : null}</pre>
+      <p>{props.count} call(s)</p>
+      <JSONPretty data-testid="test-results">{props.data ? JSON.stringify(props.data, undefined, 2) : null}</JSONPretty>
     </section>
   );
 };

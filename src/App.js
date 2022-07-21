@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import './app.scss';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -7,30 +7,24 @@ import Results from './components/results';
 
 const App = props => {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     data: null,
-  //     requestParams: {},
-  //   };
-  // }
-
-  const [ data, setData ] = useState();
+  const [ data, setData ] = useState(null);
+  const [ requestParams, setRequestParams ] = useState({});
+  const [ count, setCount ] = useState(0);
 
   const callApi = (requestParams) => {
-    // mock output
-    const apiData = {data};
-    setData(apiData);
-    // this.setState({ data, requestParams });
+    setData(data);
+    setRequestParams(requestParams);
   };
 
   return (
     <>
       <Header />
-      <div>Request Method: {props.method}</div>
-      <div>URL: {props.url}</div>
+      <div>Request Method: {requestParams.method}</div>
+      <div>URL: {requestParams.url}</div>
       <Form handleApiCall={callApi} />
-      <Results data={data}/>
+      <Results
+      data={data}
+      count={count} />
       <Footer />
     </>
   );
