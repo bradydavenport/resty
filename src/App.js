@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './app.scss';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -11,17 +12,35 @@ const App = props => {
   const [ requestParams, setRequestParams ] = useState({});
   const [ count, setCount ] = useState(0);
 
-  const callApi = (requestParams) => {
+  useEffect(() => {
+    if (requestParams) {
+      callApi();
+    }
+  }, [requestParams]);
+
+  const callApi = async () => {
+    const apiUrl = requestParams.url;
+    const response = await axios.get(apiUrl);
+    const { data } = response;
     setData(data);
-    setRequestParams(requestParams);
   };
+
+  const counter = () => {
+    setCount(count + 1);
+  }
+
+  const updateRequestParams = (arg) => {
+    setRequestParams(arg);
+  }
 
   return (
     <>
       <Header />
       <div>Request Method: {requestParams.method}</div>
       <div>URL: {requestParams.url}</div>
-      <Form handleApiCall={callApi} />
+      <Form
+      counter={counter}
+      updateRequestParams={updateRequestParams} />
       <Results
       data={data}
       count={count} />
