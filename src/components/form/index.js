@@ -10,11 +10,12 @@ const Form = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.counter();
     const formData = {
       method: method,
       url: url,
     };
-    props.handleApiCall(formData);
+    props.updateRequestParams(formData);
   };
 
   const handleMethodSelect = e => {
