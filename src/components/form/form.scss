@@ -2,9 +2,10 @@ $backgroundColor: #efefef;
 $radius: 40%;
 
 form {
+  border: 3px solid blue;
   display: inline-block;
   margin: auto;
-  width: 200px;
+  width: fit-content;
 
   label {
     display: flex;
@@ -23,4 +24,15 @@ form {
       }
     }
   }
+}
+
+#formInput {
+  border: 5px solid black;
+  margin: 20px;
+}
+
+#JSON-input {
+  border: 3px solid red;
+  width: 500px;
+  margin: 20px;
 }
