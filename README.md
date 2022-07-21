@@ -1,4 +1,4 @@
-# LAB - Class 26, 27
+# LAB - Class 26, 27, 28
 
 ## Project: RESTy
 
@@ -60,6 +60,16 @@ Set up basic scaffolding of RESTy application, with intent to add more functiona
   - Renders the count
   - Renders the Result Headers as “pretty” JSON
   - Renders the Result Body as “pretty” JSON
+
+#### Phase 3: Connect RESTy with APIs, running live requests (20 Jul 2022)
+
+##### Phase 3 Feature Tasks
+
+1. Refactor application methods to allow for browser side HTTP requests to be sent.
+
+    Your implementation should allow the user to set a url, method, and request body.
+
+2. Make sure all relavent request and response data is displayed to the User.
 
 ### Links and Resources
 
