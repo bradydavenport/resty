@@ -1,4 +1,4 @@
-# LAB - Class 26, 27, 28
+# LAB - Class 26, 27, 28, 29
 
 ## Project: RESTy
 
@@ -70,6 +70,12 @@ Set up basic scaffolding of RESTy application, with intent to add more functiona
     Your implementation should allow the user to set a url, method, and request body.
 
 2. Make sure all relavent request and response data is displayed to the User.
+
+#### Phase 4: Track History
+
+##### Phase 4 Feature Tasks
+
+1. Replace any component state managements to use derived state from `useReducer` with a reducer function and initial state
 
 ### Links and Resources
 
