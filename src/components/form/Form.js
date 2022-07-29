@@ -2,20 +2,22 @@ import { React, useState } from 'react';
 
 import './form.scss';
 
-const Form = (props) => {
+const Form = ({ updateRequestParams }) => {
 
   const [method, setMethod] = useState('GET');
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState('');
   const [JSON, setJSON] = useState('');
+
+  const apiUrl = url;
+  const apiMethod = method;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.counter();
     const formData = {
-      method: method,
-      url: url,
+      method,
+      url,
     };
-    props.updateRequestParams(formData);
+    updateRequestParams(formData);
   };
 
   const handleMethodSelect = e => {

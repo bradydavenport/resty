@@ -1,12 +1,13 @@
 import JSONPretty from "react-json-pretty";
 import 'react-json-pretty/themes/monikai.css';
 
-const Results = (props) => {
+const Results = ({ data, count }) => {
 
   return (
     <section>
-      <p>{props.count} call(s)</p>
-      <JSONPretty id='json-pretty' data-testid="test-results" data={JSON.stringify(props.data)}></JSONPretty>
+      Results: 
+      <p>{count} call(s)</p>
+      {data && <JSONPretty id='json-pretty' data-testid="test-results" data={JSON.stringify(data)}></JSONPretty>}
     </section>
   );
 };
